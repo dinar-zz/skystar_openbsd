@@ -1,0 +1,23 @@
+Index: conf.h
+===================================================================
+RCS file: /cvs/src/sys/sys/conf.h,v
+retrieving revision 1.107
+diff -u -r1.107 sys/conf.h
+--- sys/conf.h	22 Sep 2010 13:03:48 -0000	1.107
++++ sys/conf.h	2 Dec 2010 07:24:43 -0000
+@@ -524,6 +524,15 @@
+ 	(dev_type_stop((*))) enodev, 0, selfalse, \
+ 	(dev_type_mmap((*))) enodev }
+ 
++/* SkyStar */
++/* open, close, read, write, ioctl, select, mmap */
++#define cdev_skystar_init(c, n) { \
++	dev_init(c,n,open), dev_init(c,n,close), dev_init(c,n,read), \
++	(dev_type_write((*))) enodev, dev_init(c,n,ioctl), \
++	(dev_type_stop((*))) enodev, 0 }
++   
++cdev_decl(skystar);
++
+ #endif
+ 
+ /*

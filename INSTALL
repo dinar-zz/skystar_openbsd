@@ -1,0 +1,11 @@
+To install this driver, you should:
+    1. patch kernel:
+	cd /usr/src/sys
+        patch < patches/*
+    2. copy driver files to sys/dev/pci/dvb
+	cp -R sys/* /usr/src/sys
+    3. add folowing line in kernel configuration:
+	skystar* at pci?               # Skystar-1 support
+    4. and build kernel as described in config(8)
+
+

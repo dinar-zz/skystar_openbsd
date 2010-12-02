@@ -1,0 +1,15 @@
+Index: arch/i386/i386/conf.c
+===================================================================
+RCS file: /cvs/src/sys/arch/i386/i386/conf.c,v
+retrieving revision 1.135
+diff -u -r1.135 conf.c
+--- arch/i386/i386/conf.c	22 Sep 2010 13:03:47 -0000	1.135
++++ arch/i386/i386/conf.c	2 Dec 2010 07:31:22 -0000
+@@ -310,6 +310,7 @@
+ 	cdev_vscsi_init(NVSCSI,vscsi),	/* 90: vscsi */
+ 	cdev_disk_init(1,diskmap),	/* 91: disk mapper */
+ 	cdev_pppx_init(NPPPX,pppx),     /* 92: pppx */
++	cdev_skystar_init(1,skystar),	/* 93: skystar-1 DVB device */
+ };
+ int	nchrdev = sizeof(cdevsw) / sizeof(cdevsw[0]);
+ 
