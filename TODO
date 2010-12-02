@@ -1,4 +1,3 @@
 This is rough TODO list:
-    o Clarify licence to be used: the code derived from linux driver to FreeBSD first, then ported to OpenBSD, what is the licence?
     o Add video/audio stream playback support, integrate with v4l port used in OpenBSD
     o clean up code, and make it easy to add new dvb hardware
