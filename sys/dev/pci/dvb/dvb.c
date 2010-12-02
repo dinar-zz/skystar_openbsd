@@ -263,7 +263,8 @@ dvb_ipmpe(struct skystar_softc * dev, u_char * pkt, int pkt_len)
 #ifdef NET_DEBUG
 	strlcpy(bd, ether_sprintf(eh.ether_dhost), sizeof(bd));
 	strlcpy(bs, ether_sprintf(eh.ether_shost), sizeof(bs));
-	printf("net_ipmpe %s %s -> %s : type %u of %u bytes\n", ifp->if_xname, bs, bd, eh.ether_type, datalen);
+	printf("net_ipmpe %s %s -> %s : type %u of %u bytes\n", 
+	    ifp->if_xname, bs, bd, eh.ether_type, datalen);
 
 	if (eh.ether_type == ntohs(ETHERTYPE_IP))
 		printf("datatype is ip: %u.%u.%u.%u -> %u.%u.%u.%u\n",
