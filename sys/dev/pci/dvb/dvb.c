@@ -1,3 +1,5 @@
+#include "bpfilter.h"
+
 #include <sys/param.h>
 #include <sys/ioctl.h>
 #include <sys/mbuf.h>
@@ -9,6 +11,11 @@
 #include <net/route.h>
 #include <netinet/in.h>
 #include <netinet/if_ether.h>
+
+#if NBPFILTER > 0
+#include <net/bpf.h>
+#endif
+
  
 #include "frontend.h"
 #include "dvb.h"
@@ -289,7 +296,7 @@ dvb_ipmpe(struct skystar_softc * dev, u_char * pkt, int pkt_len)
 	 * If so, hand off the raw packet to BPF.
 	 */
 	if (ifp->if_bpf)
-		bpf_mtap(ifp->if_bpf, m);
+		bpf_mtap(ifp->if_bpf, m, BPF_DIRECTION_IN);
 #endif
 	ether_input_mbuf(ifp, m);
 	DELAY(500);		/* TODO: remove this */
