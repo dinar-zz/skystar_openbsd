@@ -1,0 +1,84 @@
+/*
+ * DPRAM register address
+ */
+
+#define	DPRAM_BASE	0x4000
+
+/* Boot data	 */
+#define BOOT_STATE	(DPRAM_BASE + 0x7F8)
+#define BOOT_SIZE	(DPRAM_BASE + 0x7FA)
+#define BOOT_BASE	(DPRAM_BASE + 0x7FC)
+#define BOOT_BLOCK	(DPRAM_BASE + 0x800)
+#define BOOT_MAX_SIZE	0x800
+
+#define IRQ_STATE		(DPRAM_BASE + 0x0F4)
+#define IRQ_STATE_EXT		(DPRAM_BASE + 0x0F6)
+#define MSGSTATE		(DPRAM_BASE + 0x0F8)
+#define FILT_STATE		(DPRAM_BASE + 0x0FA)
+#define COMMAND			(DPRAM_BASE + 0x0FC)
+#define COM_BUFF		(DPRAM_BASE + 0x100)
+#define COM_BUFF_SIZE		0x20
+
+#define BUFF1_BASE		(DPRAM_BASE + 0x120)
+#define BUFF1_SIZE		0xE0
+
+#define DATA_BUFF_BASE		(DPRAM_BASE + 0x200)
+#define DATA_BUFF_SIZE		0x1C00
+
+/* new buffers */
+
+#define DATA_BUFF0_BASE		(DPRAM_BASE + 0x200)
+#define DATA_BUFF0_SIZE		0x0800
+
+#define DATA_BUFF1_BASE		(DATA_BUFF0_BASE+DATA_BUFF0_SIZE)
+#define DATA_BUFF1_SIZE		0x0800
+
+#define DATA_BUFF2_BASE		(DATA_BUFF1_BASE+DATA_BUFF1_SIZE)
+#define DATA_BUFF2_SIZE		0x0800
+
+#define Reserved		(DPRAM_BASE + 0x1E00)
+#define Reserved_SIZE		0x1C0
+
+#define DEBUG_WINDOW		(DPRAM_BASE + 0x1FC0)
+#define	DBG_LOOP_CNT		(DEBUG_WINDOW + 0x00)
+#define DBG_SEC_CNT		(DEBUG_WINDOW + 0x02)
+#define DBG_AVRP_BUFF		(DEBUG_WINDOW + 0x04)
+#define DBG_AVRP_PEAK		(DEBUG_WINDOW + 0x06)
+#define DBG_MSG_CNT		(DEBUG_WINDOW + 0x08)
+#define DBG_CODE_REG		(DEBUG_WINDOW + 0x0a)
+#define DBG_TTX_Q		(DEBUG_WINDOW + 0x0c)
+#define DBG_AUD_EN		(DEBUG_WINDOW + 0x0e)
+#define DBG_WRONG_COM		(DEBUG_WINDOW + 0x10)
+#define DBG_ARR_OVFL		(DEBUG_WINDOW + 0x12)
+#define DBG_BUFF_OVFL		(DEBUG_WINDOW + 0x14)
+#define DBG_OVFL_CNT		(DEBUG_WINDOW + 0x16)
+#define DBG_SEC_OVFL		(DEBUG_WINDOW + 0x18)
+
+#define STATUS_BASE		(DPRAM_BASE + 0x1FC0)
+#define STATUS_SCR      	(STATUS_BASE + 0x00)
+#define STATUS_MODES    	(STATUS_BASE + 0x04)
+#define STATUS_LOOPS    	(STATUS_BASE + 0x08)
+
+#define RX_TYPE         	(DPRAM_BASE + 0x1FE8)
+#define RX_LEN          	(DPRAM_BASE + 0x1FEA)
+#define TX_TYPE         	(DPRAM_BASE + 0x1FEC)
+#define TX_LEN          	(DPRAM_BASE + 0x1FEE)
+
+#define RX_BUFF         	(DPRAM_BASE + 0x1FF4)
+#define TX_BUFF 		(DPRAM_BASE + 0x1FF6)
+
+#define HANDSHAKE_REG		(DPRAM_BASE + 0x1FF8)
+#define COM_IF_LOCK		(DPRAM_BASE + 0x1FFA)
+
+#define IRQ_RX			(DPRAM_BASE + 0x1FFC)
+#define IRQ_TX			(DPRAM_BASE + 0x1FFE)
+
+#define DRAM_START_CODE		0x2e000404
+#define DRAM_MAX_CODE_SIZE	0x00100000
+
+#define RESET_LINE		2
+#define DEBI_DONE_LINE		1
+#define ARM_IRQ_LINE		0
+
+#define DAC_CS			0x8000
+#define DAC_CDS			0x0000

@@ -1,0 +1,11 @@
+# $OpenBSD$
+
+device	skystar: pcibus
+attach	skystar at pci
+file	dev/pci/dvb/skystar_dev.c
+file	dev/pci/dvb/saa7146.c
+file	dev/pci/dvb/arm.c 
+file	dev/pci/dvb/dvb.c 
+file	dev/pci/dvb/dvb_bsru6.c 
+file	dev/pci/dvb/dvb_bsrv2.c 
+
