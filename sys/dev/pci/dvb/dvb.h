@@ -1,7 +1,8 @@
 /*
  * OpenBSD 4.8 driver for Skystar1 DVB card rev. 1.3 and 1.5
+ * Copyright (c) 2010 Dinar Talypov & Edward Garipov
  * based on code by:
- * Copyright (c) 2002 Alexander Romanov ported to OpenBSD 3.7 for Alloyant Technologies
+ * Copyright (c) 2002 Alexander Romanov ported to OpenBSD 3.3 for Alloyant Technologies
  * based on code by:
  * FreeBSD driver for SkyStar1 DVB card (Siemens Fujitsu DVB PCI)
  * Copyright (c) 2000 Stanislav "Stephen" Golovin
